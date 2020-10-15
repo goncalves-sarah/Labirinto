@@ -3,11 +3,10 @@
 #include <string>
 using namespace std;
 
-PilhaArray::PilhaArray(int capacidade, double fator) {
+PilhaArray::PilhaArray(int capacidade) {
     this->capacidade = capacidade;
     this->dados = new string[capacidade];
     this->topo = -1;
-    this->fator = fator;
 }
 
 void PilhaArray::limpar() {
@@ -16,8 +15,7 @@ void PilhaArray::limpar() {
 
 void PilhaArray::empilha(string dado) {
     if (topo == capacidade-1) {
-        int novaCapacidade = capacidade * (1.0+fator);
-        if (novaCapacidade <= capacidade) novaCapacidade = capacidade + 5;
+        int novaCapacidade = capacidade + 50;
         redimensionar(novaCapacidade);
     }
     topo = topo + 1;
@@ -51,8 +49,8 @@ void PilhaArray::ajustarAoTamanho() {
 }
 
 void PilhaArray::redimensionar(int novaCapacidade) {
-    string* novo = new string[novaCapacidade];
-    memcpy(novo, dados, capacidade*sizeof(int));
+    string *novo = new string[novaCapacidade];
+    memcpy(novo, dados, capacidade*sizeof(string));
     delete [] dados;
 
     dados = novo;

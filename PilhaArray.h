@@ -15,7 +15,7 @@ private:
     void redimensionar(int novaCapacidade);
 
 public:
-    explicit PilhaArray(int capacidade, double fator=0.5);
+    explicit PilhaArray(int capacidade);
 
     //Desabilita a cópia: exclui o construtor de cópia e o operador de =
     PilhaArray(const PilhaArray& other) = delete;
