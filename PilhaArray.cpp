@@ -5,7 +5,7 @@ using namespace std;
 
 PilhaArray::PilhaArray(int capacidade) {
     this->capacidade = capacidade;
-    this->dados = new string[capacidade];
+    this->dados = new int[capacidade];
     this->topo = -1;
 }
 
@@ -13,18 +13,18 @@ void PilhaArray::limpar() {
     topo = -1;
 }
 
-void PilhaArray::empilha(string dado) {
+void PilhaArray::empilha(int dado) {
     if (topo == capacidade-1) {
-        int novaCapacidade = capacidade + 50;
+        int novaCapacidade = capacidade + 10;
         redimensionar(novaCapacidade);
     }
     topo = topo + 1;
     dados[topo] = dado;
 }
 
-string PilhaArray::desempilha()
+int PilhaArray::desempilha()
 {
-    string dado = dados[topo];
+    int dado = dados[topo];
     topo = topo -1;
     return dado;
 }
@@ -49,8 +49,8 @@ void PilhaArray::ajustarAoTamanho() {
 }
 
 void PilhaArray::redimensionar(int novaCapacidade) {
-    string *novo = new string[novaCapacidade];
-    memcpy(novo, dados, capacidade*sizeof(string));
+    int *novo = new int[novaCapacidade];
+    memcpy(novo, dados, capacidade*sizeof(int));
     delete [] dados;
 
     dados = novo;

@@ -7,7 +7,7 @@ using namespace std;
 
 class PilhaArray : public Pilha {
 private:
-    string *dados;
+    int *dados;
     int capacidade;
     int topo;
     double fator;
@@ -22,8 +22,8 @@ public:
     PilhaArray& operator = (const PilhaArray& other) = delete;
 
     virtual void limpar() override;
-    virtual void empilha(string dado) override;
-    virtual string desempilha() override;
+    virtual void empilha(int dado) override;
+    virtual int desempilha() override;
     virtual bool isVazia() const override;
     virtual bool isCheia() const override;
 

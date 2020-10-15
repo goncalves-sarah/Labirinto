@@ -80,28 +80,28 @@ int Labirinto::verificaCaminhos() {
 }
 
 void Labirinto::ajustarPosicao(int caminho) {
-  string empilha;
+  int empilha;
   switch(caminho){
     case 0:
-      empilha = '0';
+      empilha = 0;
       pilha->empilha(empilha);
       dados[linhaAtual][colunaAtual] = '-';
       colunaAtual -= 1;
       break;
     case 1:
-      empilha = '1';
+      empilha = 1;
       pilha->empilha(empilha);
       dados[linhaAtual][colunaAtual] = '-';
       linhaAtual -= 1;
       break;
     case 2:
-      empilha = '2';
+      empilha = 2;
       pilha->empilha(empilha);
       dados[linhaAtual][colunaAtual] = '-';
       colunaAtual += 1;
       break;
     case 3:
-      empilha = '3';
+      empilha = 3;
       pilha->empilha(empilha);
       dados[linhaAtual][colunaAtual] = '-';
       linhaAtual += 1;   
@@ -114,19 +114,19 @@ void Labirinto::meiaVoltaVolver() {
     dados[linhaAtual][colunaAtual] = '-';
   }
 
-  string anterior = pilha->desempilha();
+  int anterior = pilha->desempilha();
 
-  switch(anterior[0]){
-  case '0':
+  switch(anterior){
+  case 0:
         colunaAtual += 1;
         break;
-  case '1':
+  case 1:
         linhaAtual += 1;
         break;
-  case '2':
+  case 2:
         colunaAtual -= 1;
         break;
-  case '3':
+  case 3:
         linhaAtual -= 1;
         break;
   }

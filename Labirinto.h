@@ -12,7 +12,7 @@ class Labirinto {
 private:
   int linhaAtual, colunaAtual;
   vector<string> dados;
-  PilhaArray *pilha = new PilhaArray(150);
+  PilhaArray *pilha = new PilhaArray(50);
 
 public:
     explicit Labirinto(vector<string> labirinto);
