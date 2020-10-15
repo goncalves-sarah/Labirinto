@@ -1,6 +1,6 @@
 Labirinto
 
-Projeto da Disciplina de Programação Com Estrutu
+Projeto da Disciplina de Programação Com Estrutura de Dados Avançados
 
 Projeto capaz de encontrar uma saída em um labirinto, desde que o mesmo siga certas regras.
 
