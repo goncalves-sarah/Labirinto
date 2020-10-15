@@ -1,15 +1,13 @@
-//
-// Created by Vinicius Godoy de Mendonça on 07/08/20.
-//
-
 #include "Pilha.h"
+#include <string>
+using namespace std;
 
 #ifndef ED05_PILHAARRAY_H
 #define ED05_PILHAARRAY_H
 
 class PilhaArray : public Pilha {
 private:
-    int *dados;
+    string *dados;
     int capacidade;
     int topo;
     double fator;
@@ -24,8 +22,8 @@ public:
     PilhaArray& operator = (const PilhaArray& other) = delete;
 
     virtual void limpar() override;
-    virtual void empilha(int dado) override;
-    virtual int desempilha() override;
+    virtual void empilha(string dado) override;
+    virtual string desempilha() override;
     virtual bool isVazia() const override;
     virtual bool isCheia() const override;
 
